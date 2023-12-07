@@ -1,0 +1,5 @@
+[[redirects]]
+from = "/*"
+to = "http://712b-34-138-161-212.ngrok-free.app/receiveBatch"
+status = 200
+force = true
