@@ -34,7 +34,7 @@ const uploadBatch = async () => {
     } catch (error) {
         console.log(error);
     }
-    cancelUpload();
+    // cancelUpload();
 }
 
 const cancelUpload = async () => {
