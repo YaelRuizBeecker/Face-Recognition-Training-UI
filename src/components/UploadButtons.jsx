@@ -20,13 +20,14 @@ const uploadBatch = async () => {
     });
     
     try {
-        const formData = new FormData();
-        formData.append('name', username);
-        formData.append('images', JSON.stringify(image_batch));
+        console.log('Enviando data a :', serverURL);
         const response = await fetch(serverURL, {
             method: 'POST',
-            // Note: Do not set 'Content-Type' in headers for FormData
-            body: formData,
+            headers: {
+                "Content-Type": "application/json",
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: {name:username, images:JSON.stringify(image_batch)},
         });
         const responseData = await response.json();
         console.log(responseData.body)
