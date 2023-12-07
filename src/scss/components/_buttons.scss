@@ -1,0 +1,22 @@
+.btn {
+    display: flex;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 2.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    align-items: center;
+    gap: 2rem;
+
+    p{
+        margin: 0;
+    }
+}
+
+.btn-cancel {
+    background-color: #E9473A;
+}
+.btn-upload{
+    background-color: #7BFA5B;
+}

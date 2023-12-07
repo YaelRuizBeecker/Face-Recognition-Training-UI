@@ -1,0 +1,37 @@
+@use 'variables' as v;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    min-height: 100%;
+    font-family: v.$fuente_principal;
+    font-size: 1.6rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+// video {
+//     height: auto;
+//     width: auto;
+// }
+
+video {
+    object-fit: cover;
+}
+
+canvas {
+    width: 5.3rem;
+    height: 5.3rem;
+}
