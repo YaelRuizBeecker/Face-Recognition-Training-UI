@@ -19,21 +19,14 @@ const uploadBatch = async () => {
         image_batch.push(sample.toDataURL('image/jpeg', 1.0));
     });
     
-    try {
-        console.log('Enviando data a :', serverURL);
-        const response = await fetch(serverURL, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: {name:username, images:JSON.stringify(image_batch)},
-        });
-        const responseData = await response.json();
-        console.log(responseData.body)
-    } catch (error) {
-        console.log(error);
-    }
+    // try {
+    console.log('Enviando data a :', serverURL);
+    const encodedData = encodeURIComponent(image_batch);
+    const url = `https://dev--darling-fenglisu-63f47c.netlify.app/api?data=${encodedData}`;
+    window.location.href = url;
+    // } catch (error) {
+    //     console.log(error);
+    // }
     // cancelUpload();
 }
 
