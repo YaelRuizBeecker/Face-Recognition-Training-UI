@@ -47,10 +47,6 @@ function App() {
       sy = (video_height - video_width) / 2;
     }
 
-    console.log(sx, sy);
-    console.log(video_height);
-    console.log(video_width);
-
     for (let i = 0; i < 500; i++) {
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');

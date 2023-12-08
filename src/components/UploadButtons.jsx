@@ -29,11 +29,11 @@ const uploadBatch = async () => {
             body: formData,
         });
         const responseData = await response.json();
-        console.log(responseData.body)
+        alert("Thank you " + username + " " + responseData.body)
     } catch (error) {
         console.log(error);
     }
-    // cancelUpload();
+    cancelUpload();
 }
 
 const cancelUpload = async () => {
