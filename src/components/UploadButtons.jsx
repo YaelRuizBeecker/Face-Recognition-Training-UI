@@ -2,12 +2,14 @@ import upload_icon from '../assets/upload_icon.svg';
 import cancel_icon from '../assets/cancel_icon.svg';
 
 
-const uploadBatch = async () => {
+const uploadBatch = async (e) => {
 
     const serverURL = 'https://bd83-35-231-144-131.ngrok-free.app/receiveBatch';
     const image_batch = []
     const samples = document.querySelectorAll('canvas');
     const username = document.querySelector('input').value;
+
+    e.target.disabled = true;
     
     if (username === ''){
         alert('Escriba su nombre antes de subir las imágenes.');
