@@ -39,12 +39,15 @@ function App() {
     let counter = sampleNum;
     let sx = 0;
     let sy = 0;
+    let s_size = 0;
     if (video_height < video_width){
       sx = (video_width - video_height) / 2;
       sy = 0;
+      s_size = video_height;
     } else {
       sx = 0;
       sy = (video_height - video_width) / 2;
+      s_size = video_width;
     }
 
     for (let i = 0; i < 1; i++) {
@@ -54,7 +57,7 @@ function App() {
       const samples_container = document.querySelector('ol');
       canvas.width = 224;
       canvas.height = 224;
-      ctx.drawImage(video, sx, sy, 224, 224, 0, 0, video.videoWidth, video.videoHeight);
+      ctx.drawImage(video, sx, sy, s_size, s_size, 0, 0, 224, 224);
       new_element.key = sampleNum;
 
       new_element.appendChild(canvas);
