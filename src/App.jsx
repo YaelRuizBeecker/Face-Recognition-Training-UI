@@ -43,11 +43,11 @@ function App() {
     if (video_height < video_width){
       sx = (video_width - video_height) / 2;
       sy = 0;
-      s_size = video_height;
+      s_size = video.videoHeight;
     } else {
       sx = 0;
       sy = (video_height - video_width) / 2;
-      s_size = video_width;
+      s_size = video.videoWidth;
     }
 
     for (let i = 0; i < 1; i++) {
@@ -57,7 +57,7 @@ function App() {
       const samples_container = document.querySelector('ol');
       canvas.width = 224;
       canvas.height = 224;
-      ctx.drawImage(video, sx, sy, video.videoWidth, video.videoWidth, 0, 0, 224, 224);
+      ctx.drawImage(video, sx, sy, s_size, s_size, 0, 0, 224, 224);
       new_element.key = sampleNum;
 
       new_element.appendChild(canvas);
