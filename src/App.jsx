@@ -54,7 +54,7 @@ function App() {
       const samples_container = document.querySelector('ol');
       canvas.width = 224;
       canvas.height = 224;
-      ctx.drawImage(video, sx, sy, video.videoHeight, video.videoHeight, 0, 0, 224, 224);
+      ctx.drawImage(video, sx, sy, 224, 224, 0, 0, video.videoWidth, video.videoHeight);
       new_element.key = sampleNum;
 
       new_element.appendChild(canvas);
