@@ -4,10 +4,13 @@ import cancel_icon from '../assets/cancel_icon.svg';
 
 const uploadBatch = async (e) => {
 
-    const serverURL = 'https://79b4-35-231-144-131.ngrok-free.app/receiveBatch';
+    const serverURL = 'https://d6f7-35-231-144-131.ngrok-free.app/receiveBatch';
     const image_batch = []
     const samples = document.querySelectorAll('canvas');
     const username = document.querySelector('input').value;
+    const video = document.querySelector('video');
+    const height = video.videoHeight;
+    const width = video.videoWidth;
 
     
     if (username === ''){
@@ -15,7 +18,7 @@ const uploadBatch = async (e) => {
         document.querySelector('input').focus();
         return 
     }
-    
+
     e.target.disabled = true;
     
     samples.forEach(sample => {
@@ -26,6 +29,7 @@ const uploadBatch = async (e) => {
         const formData = new FormData();
         formData.append('name', username);
         formData.append('images', JSON.stringify(image_batch));
+        formData.append('resolution', height + " x " + width);
         const response = await fetch(serverURL, {
             method: 'POST',
             // Note: Do not set 'Content-Type' in headers for FormData
