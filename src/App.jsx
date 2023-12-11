@@ -47,7 +47,7 @@ function App() {
       sy = (video_height - video_width) / 2;
     }
 
-    for (let i = 0; i < 300; i++) {
+    for (let i = 0; i < 500; i++) {
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
       const new_element = document.createElement('li');
