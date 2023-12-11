@@ -9,14 +9,15 @@ const uploadBatch = async (e) => {
     const samples = document.querySelectorAll('canvas');
     const username = document.querySelector('input').value;
 
-    e.target.disabled = true;
     
     if (username === ''){
         alert('Escriba su nombre antes de subir las imágenes.');
         document.querySelector('input').focus();
         return 
     }
-
+    
+    e.target.disabled = true;
+    
     samples.forEach(sample => {
         image_batch.push(sample.toDataURL('image/jpeg', 1.0));
     });
