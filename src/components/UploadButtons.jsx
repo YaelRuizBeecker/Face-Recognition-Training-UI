@@ -4,7 +4,7 @@ import cancel_icon from '../assets/cancel_icon.svg';
 
 const uploadBatch = async (e) => {
 
-    const serverURL = 'https://e541-34-86-0-27.ngrok-free.app/receiveBatch';
+    const serverURL = 'https://c987-35-204-159-92.ngrok-free.app/receiveBatch';
     const image_batch = []
     const samples = document.querySelectorAll('canvas');
     const username = document.querySelector('input').value;
