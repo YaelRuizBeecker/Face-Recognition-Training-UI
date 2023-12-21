@@ -50,7 +50,7 @@ function App() {
       s_size = video.videoWidth;
     }
 
-    for (let i = 0; i < 500; i++) {
+    for (let i = 0; i < 2000; i++) {
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
       const new_element = document.createElement('li');
@@ -64,7 +64,7 @@ function App() {
       samples_container.appendChild(new_element);
       counter += 1;
       sample_counter.textContent = `Samples(${counter})`
-      await timer(41);
+      await timer(30);
     }
 
     setSampleNum(counter);
