@@ -2,12 +2,16 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import beeckerLogo from './assets/beecker.svg'
 import UploadButtons from './components/UploadButtons'
+import Modal from './components/Modal'
 
 function App() {
   const [sampleNum, setSampleNum] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [snaping, setSnaping] = useState(false);
   const [readyState, setReadyState] = useState(false);
+  const [openedModal, setOpenModal] = useState(false);
+  const [successUploads, setSuccessUploads] = useState(0);
+  const [failedUploads, setFailedUploads] = useState(0);
 
   const HEIGHT = 265;
 	const WIDTH = 265;
@@ -73,6 +77,7 @@ function App() {
 
   return (
     <>
+      {openedModal && <Modal success={successUploads} failed={failedUploads} />}
       <div className='App-container'>
         <header className="App-header">
           <img src={beeckerLogo} alt="logo" className="App-logo" />
@@ -127,12 +132,12 @@ function App() {
               </ol>
             </div>
             {
-              readyState ? <UploadButtons /> : <></> 
+              readyState ? <UploadButtons setOpenModal={setOpenModal} setSuccessUploads={setSuccessUploads} setFailedUploads={setFailedUploads} failedUploads={failedUploads} successUploads={successUploads}/> : <></> 
             }
           </div>
         </main>
       </div>
-      
+      {/* {openedModal && <Modal success={successUploads} failed={failedUploads} />} */}
     </>
   );
 }
