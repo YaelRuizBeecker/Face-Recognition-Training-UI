@@ -50,7 +50,7 @@ function App() {
       s_size = video.videoWidth;
     }
 
-    for (let i = 0; i < 2000; i++) {
+    for (let i = 0; i < 500; i++) {
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
       const new_element = document.createElement('li');
