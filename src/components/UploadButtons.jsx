@@ -4,7 +4,7 @@ import cancel_icon from '../assets/cancel_icon.svg';
 
 const uploadImage = async (username, image) => {
 
-    const serverURL = 'https://de38-35-188-11-135.ngrok-free.app/receiveBatch';
+    const serverURL = 'https://7a23-34-41-130-47.ngrok-free.app/receiveBatch';
     
     try {
         const formData = new FormData();
